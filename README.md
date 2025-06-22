@@ -67,7 +67,6 @@
     |
     ├── lib/                     # 完整的 Waveshare 驅動庫
     │   ├── TP_lib/
-    │   └── epdconfig.py
     |
     └── output_data/             # 包含所有 .map, .font, .idx, .dat 檔案
     ```
