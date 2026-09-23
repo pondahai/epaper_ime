@@ -120,3 +120,23 @@
 -   **英文/數字鍵盤**: 增加一個英文/數字鍵盤頁面。
 -   **介面美化**: 設計更美觀的圖示和按鈕樣式。
 -   **移植到微控制器 (RP2040)**: 本專案的架構設計完全是為了最終能移植到像 Raspberry Pi Pico 這樣的微控制器上。屆時需要將 Python 邏輯用 C/C++ 重寫，並將 JSON 格式的索引檔 (`.map`, `.idx`) 轉換為更節省記憶體的純二進位格式。
+
+> 這件事後來做到了 —— 見 [chinese-on-mcu](https://github.com/pondahai/chinese-on-mcu)，
+> 本專案是那條技術鏈的起點。
+
+## 授權
+
+本專案自身的程式碼採 **MIT**，見 [`LICENSE`](LICENSE)。
+
+`output_data/` 內的資料檔是第三方資源的衍生物，其聲明必須隨著散布。
+完整內容見 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)，摘要如下：
+
+| 成分 | 上游 | 授權 |
+| :--- | :--- | :--- |
+| `zhuyin.idx` / `zhuyin.dat` | [McBopomofo](https://github.com/openvanilla/McBopomofo) | MIT，Copyright (c) 2011-2026 Mengjuei Hsieh et al. |
+| `BoutiqueBitmap9x9_*.font` / `.map` | [BoutiqueBitmap9x9](https://github.com/scott0107000/BoutiqueBitmap9x9) | SIL OFL 1.1 |
+| `lib/TP_lib/` | Waveshare 官方驅動 | 見該目錄內檔頭聲明 |
+
+碼表使用的是 `BPMFBase.txt`（單字注音）與 `BPMFPunctuations.txt`（標點），
+兩者在上游皆無額外出處註記。帶有 libtabe（BSD）血統的是多字詞庫
+`BPMFMappings.txt` —— **本專案未使用**（這裡是單字候選，不是詞庫）。
